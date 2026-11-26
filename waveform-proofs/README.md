@@ -85,3 +85,6 @@ naming.
   `src/gap_rung_experiment.py` with `notes/gap-rung.md` (class ≥ 3 from the depth-2
   loop via the U(n) spectral gap; unitary, full-frame only). Captures are in
   `outputs/`. `notes/` now holds six notes.
+- **Corrected in place:** `notes/h2-nonabelian-rung.md` (calibration range) and
+  `notes/h3-nested-rung.md` §3 (gap shortcut) now carry the corrections from the
+  two Nov 26 notes. See `../RECONCILIATION.md`, R6 and R7.

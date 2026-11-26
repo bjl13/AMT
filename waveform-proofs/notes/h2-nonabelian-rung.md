@@ -63,21 +63,23 @@ The matched-null demonstration is exact: **‖Hol_A − I‖ = 1.082 is identica
 NA detection is ~1.00 throughout; recovered ‖[A,B]‖ concentrates on √2 = 1.414 for NA at every R, while AB's estimate decays toward 0 as noise averages down (0.52 → 0.06) — the expected behaviour of a commuting pair seen through finite estimation noise.
 
 **The R = 2 calibration wobble, reported honestly.** At R = 2, AB and Z false-alarm rates jump to 0.12 and 0.15 — above the nominal 5%. This is a **noise-estimation artifact, not a property of the invariant**: with only 2 shots the plug-in variance σ̂_eff² is a ~1-degree-of-freedom estimate per component and is frequently under-estimated, which tightens the simulated null and inflates false positives. The same rows show NA detection at 1.00 and ‖[A,B]‖ on target, confirming the invariant is intact; only the self-calibration is under-powered. The detector is calibrated for **R ≥ 5** (AB false-alarm 0.03–0.05; Z 0.05–0.08, the latter running ~1 binomial SE high and conservatively tightenable with a small threshold inflation). R = 2 is not a regime one would run a holonomy detector in; the honest statement is that the estimator needs ≳ 5 shots to calibrate its own noise floor.
+> **Correction (from `h2-tangent-backport.md`; `RECONCILIATION.md` R6).** The R ≥ 5 claim does not hold for this plug-in null. A paired 4000-trial rerun reads 0.075 and 0.068 false alarms at R = 5, and the plug-in is calibrated only from R ≈ 20 under injection; under Kato transport with path jitter it reaches 0.21. The studentized null with σ̂ taken from the tangent components is calibrated from R = 2 (0.036–0.059, injected and end-to-end) at no measurable power cost (R₈₀ ≈ 12 σ²ε⁻⁴). That is now the recommended H₂ calibration. The invariant and the claim language are unchanged.
+
 
 ---
 
 ## 3. Verdict
 
-**GO for H₂ (regime R ≥ 5).** The apparatus supports a falsifier for a signature with **no additive and no abelian shadow**. Concretely it:
+**GO for H₂ (plug-in null: R ≳ 20; studentized tangent σ̂: R ≥ 2, per the correction in §2).** The apparatus supports a falsifier for a signature with **no additive and no abelian shadow**. Concretely it:
 
 1. **detects** injected non-abelian transport (loop-order dependence / commutator-loop holonomy ≠ I) at ~100% for R ≥ 1;
 2. **recovers** the non-commutativity magnitude ‖[Hol_A, Hol_B]‖ → √2, the analytic truth, for NA and → 0 for AB;
-3. **stays calibrated against the abelian comparator** — the strongest simpler transport model — at ≈ 5% false-alarm for R ≥ 5, and against noise;
+3. **stays calibrated against the abelian comparator** — the strongest simpler transport model — at ≈ 5% false-alarm, from R ≈ 20 with the plug-in null and from R = 2 with the studentized tangent σ̂ (`h2-tangent-backport.md`), and against noise;
 4. does all of this while the single-loop magnitude signature is **provably identical** between the non-abelian world and its matched abelian null, so no magnitude/interference statistic could have made the call.
 
 This is the strongest empirical claim in the corpus. H₁ showed the machinery beats a *static* competitor; H₂ detects a signature no abelian holonomy reproduces in the full-frame readout, in any representation dimension — because a homomorphism carries the commutator of commuting elements to the identity regardless of dimension (Ladder Theorem 1), and the observable is exactly the departure from that. For a projected readout the exclusion is weaker and open; the experiment uses the full-frame readout, where the exclusion is a theorem. Loop-order dependence is a genuinely non-abelian invariant; recovering it against a spectrum-matched abelian null is the thing the whole thread was circling.
 
-**What it does and does not claim.** Synthetic ground-truth recovery, k = 2 / U(2), with the matched abelian null (H₁) as comparator. A positive result certifies *non-abelian* (class ≥ 2), not "class 2". It does *not* assert real data carries non-abelian holonomy — it establishes that the instrument can detect it when present, quantify it, and stay silent against the abelian family when absent. That is precisely the calibrated instrument needed to ask the real-data question without the hollowness the field trial suffered. The remaining honest gap is the R < 5 self-calibration (a noise-estimator fix, not an invariant fix) and, as always, a real corpus with plausible non-abelian frame structure.
+**What it does and does not claim.** Synthetic ground-truth recovery, k = 2 / U(2), with the matched abelian null (H₁) as comparator. A positive result certifies *non-abelian* (class ≥ 2), not "class 2". It does *not* assert real data carries non-abelian holonomy — it establishes that the instrument can detect it when present, quantify it, and stay silent against the abelian family when absent. That is precisely the calibrated instrument needed to ask the real-data question without the hollowness the field trial suffered. The small-R self-calibration gap is closed by the studentized tangent σ̂ (`h2-tangent-backport.md`); what remains is the projected-readout exclusion and, as always, a real corpus with plausible non-abelian frame structure.
 
 ---
 

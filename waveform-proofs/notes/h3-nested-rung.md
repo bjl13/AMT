@@ -157,12 +157,14 @@ This exposed a calibration mode that injected holonomies cannot show. Path jitte
 
 g(2) = g(3) = g(4) = 2√2 ≈ 2.83. g(8) ≈ 2.17, g(64) ≈ 0.79, g(256) ≈ 0.39, and g(n) ~ 2π/√n for large n.
 
-**Consequence.** In a fiber of known dimension n, any measured 0 < ‖[A,B]−I‖ < g(n) already certifies class ≥ 3 from the *depth-2* loop alone. In U(2) this covers every non-abelian world here except the D8 null, which sits exactly on the gap: D16 and Q16 (2.000), Dgen (2.380), WZ (2.770), and every small-holonomy NN(ε). H₂'s own readout, plus unitarity, plus n, already places a small-holonomy Kato world above class 2.
+> **Sharper form (`gap-rung.md` Proposition 1; `RECONCILIATION.md` R7).** The dimension of each irreducible block *equals* the order of c (c is a primitive m-th root of unity on an m-dimensional block), not merely c^d = 1. That gives the complete list of class-2 commutator spectra, which an exact null needs. g(n) is unchanged.
+
+**Consequence.** In a fiber of known dimension n, under full-frame readout, a commutator loop that reads *confidently* nonzero and *confidently* below g(n) already certifies class ≥ 3 from the *depth-2* loop alone. "Confidently" is load-bearing: a raw d̂ < g(n) rule false-alarms on D8 with probability 1, because at C = −I the estimate is biased at second order. `gap-rung.md` builds the calibrated test (an intersection-union test with an se² pivot at ±1 spectra). In U(2) this covers every non-abelian world here except the D8 null, which sits exactly on the gap: D16 and Q16 (2.000), Dgen (2.380), WZ (2.770), and every small-holonomy NN(ε). H₂'s own readout, plus unitarity, plus n, already places a small-holonomy Kato world above class 2.
 
 So in the regime that costs 6.5 × 10⁵ shots at ε = 0.1, H₃ is logically redundant with H₂ for unitary transport in small fibers. It adds independent information in three places:
 
 1. **non-unitary transport** (the GL track: dissipative, non-Hermitian or otherwise non-Kato connections), where class-2 commutators are not quantized and Heis-type nulls sit arbitrarily close to I;
-2. **large or unknown fiber dimension**, where the gap g(n) closes like 1/√n;
+2. **projected readout**, where the naive gap does not survive (`gap-rung.md` §4b), and **large fiber dimension**, where g(n) closes like 1/√n. Under full-frame readout n is the readout dimension, so "unknown n" is not the operative exception; an understated n is fatal to the shortcut, an overstated one only costs power;
 3. a certificate that must **not lean on the representation theory of U(n)**. Theorem 1 is dimension-free and model-free; the shortcut is neither.
 
 This is the "virtually abelian" observation turned into a usable bound. It also says how to read the ladder above depth 2 for Kato holonomy: the rungs stay well-defined, but in small fibers their *information* is front-loaded into depth 2.
@@ -178,7 +180,7 @@ This is the "virtually abelian" observation turned into a usable bound. It also 
 3. **separates what depth 2 cannot.** The H₂ detector fires at 1.00 on the class-2 null and, on the unipotent track, at identical rates on null and alternative;
 4. **survives end-to-end Kato transport** once σ̂ is taken from the tangent components.
 
-It does **not** come cheap near the identity. R₈₀ ≈ 7.5 σ² ε⁻⁶: 51 shots at ε = 0.5, about 10⁴ at 0.2, 6.5 × 10⁵ at 0.1, 9 × 10⁸ at 0.03. For small holonomies the direct rung is an instrument for large-holonomy worlds or for non-unitary transport. For small unitary holonomies, Section 3's shortcut does the same job from depth-2 data.
+It does **not** come cheap near the identity. R₈₀ ≈ 7.5 σ² ε⁻⁶: 51 shots at ε = 0.5, about 10⁴ at 0.2, 6.5 × 10⁵ at 0.1, 9 × 10⁸ at 0.03. For small holonomies the direct rung is an instrument for large-holonomy worlds or for non-unitary transport. For small unitary holonomies under full-frame readout, Section 3's shortcut does the same job from depth-2 data; `gap-rung.md` gives the calibrated version, R₈₀ ≈ 13 σ²ε⁻⁴.
 
 **Claim language.** "A positive H₃ result certifies that the holonomy group is not nilpotent of class ≤ 2 (class ≥ 3, a lower bound), in any representation dimension, under full-frame readout (Ladder Theorem 1). It does not determine the class." H₂ should be described the same way: *non-abelian* (class ≥ 2), not "class 2".
 
