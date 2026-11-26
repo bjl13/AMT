@@ -1,0 +1,13 @@
+Mobius twisted sheaf Laplacian L = D^T D over R
+
+  n   max|spec-pred|        gap   gap_pred  rank(D)  acyclic/R
+  5         6.66e-16   0.381966   0.381966        5       True
+  8         1.11e-15   0.152241   0.152241        8       True
+ 12         8.88e-16   0.068148   0.068148       12       True
+
+H^1 over R = 0 (acyclic) but conditioning ~ 1/gap ~ n^2/pi^2 diverges => 'soft obstruction'
+
+Integral cohomology via Smith normal form over Z:
+  n=3: Smith diag = [1, 1, 2]  =>  H^1(S^1; Z_-) = Z/2
+  n=5: Smith diag = [1, 1, 1, 1, 2]  =>  H^1(S^1; Z_-) = Z/2
+  n=8: Smith diag = [1, 1, 1, 1, 1, 1, 1, 2]  =>  H^1(S^1; Z_-) = Z/2

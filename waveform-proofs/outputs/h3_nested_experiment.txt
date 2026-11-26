@@ -1,0 +1,177 @@
+
+0. EXACT STRUCTURE OF THE WORLDS (no noise)
+-------------------------------------------
+U(2) track: depth-k = max ||w - I||_F over weight-k left-normed commutators
+ world class  ||A-I||  ||B-I||                eig A  d2 [A,B]     d3a     d3b      d4      d5
+     Z     0    0.000    0.000                +1,+1     0.000   0.000   0.000   0.000   0.000
+    D8     2    2.000    2.000                -1,+1     2.828   0.000   0.000   0.000   0.000
+   D16     3    2.000    2.000                -1,+1     2.000   2.828   2.828   0.000   0.000
+   Q16     3    1.082    2.000 0.71-0.71j,0.71+0.71j     2.000   0.000   2.828   0.000   0.000
+  Dgen   inf    2.000    2.000                -1,+1     2.380   2.572   2.572   2.141   2.798
+    WZ   inf    1.851    1.851 0.14-0.99j,0.14+0.99j     2.770   0.786   0.786   1.493   2.500
+D8, D16, Dgen: both generators are mirrors, eigenvalues {+1,-1}: depth-1 spectra matched.
+Q16: signal only on [[A,B],B]; a single-bracket ([[A,B],A]) detector is blind to it.
+U(2) structural fact: a non-abelian class-2 pair in U(2) has [A,B] = -I exactly (central,
+det 1, scalar on the irreducible 2-dim block, c^2 = 1). So the class-2 null cannot be
+matched to a class-3 world at depth 2 in U(2), and no class-2 unitary pair exists near I.
+
+Small-holonomy family NN(eps) = R(x,eps), R(y,eps) (not nilpotent). eps is the ROTATION
+angle, R(n,eps) = exp(-i eps/2 n.sigma), as in h2_nonabelian_experiment.py; in the generator-
+angle convention exp(-i t n.sigma) the same row is t = eps/2.
+   eps       d1         d2        d3a        d3b  d3/eps^3  d2/eps^2
+  1.00   0.6998  6.501e-01  5.470e-01  5.470e-01    0.5470    0.6501
+  0.50   0.3526  1.731e-01  8.300e-02  8.300e-02    0.6640    0.6925
+  0.30   0.2119  6.316e-02  1.867e-02  1.867e-02    0.6913    0.7018
+  0.20   0.1414  2.819e-02  5.601e-03  5.601e-03    0.7001    0.7048
+  0.10   0.0707  7.065e-03  7.053e-04  7.053e-04    0.7053    0.7065
+  0.05   0.0354  1.767e-03  8.833e-05  8.833e-05    0.7067    0.7070
+  0.03   0.0212  6.363e-04  1.909e-05  1.909e-05    0.7069    0.7071
+  0.01   0.0071  7.071e-05  7.071e-07  7.071e-07    0.7071    0.7071
+
+GL(4) unipotent track, matched at depths 1 and 2 (all eigenvalues 1):
+   eps  world  ||A-I||  ||B-I||         d2        d3a        d3b        d4
+  0.50   Heis   0.7071   0.5303  3.750e-01  0.000e+00  0.000e+00   0.0e+00
+  0.50   Uni4   0.7071   0.5000  3.750e-01  2.500e-01  0.000e+00   0.0e+00
+  0.20   Heis   0.2828   0.2020  5.713e-02  0.000e+00  0.000e+00   0.0e+00
+  0.20   Uni4   0.2828   0.2000  5.713e-02  1.600e-02  0.000e+00   0.0e+00
+  0.10   Heis   0.1414   0.1002  1.418e-02  0.000e+00  0.000e+00   0.0e+00
+  0.10   Uni4   0.1414   0.1000  1.418e-02  2.000e-03  0.000e+00   0.0e+00
+
+1. SEPARATION (sigma=0.3, R=20, 1000 trials, studentized calibration)
+---------------------------------------------------------------------
+ world class | H2 depth-2 | H3 single  H3 max  H3 rss
+     Z     0 |      0.046 |     0.054   0.055   0.042
+    D8     2 |      1.000 |     0.052   0.056   0.067
+   D16     3 |      1.000 |     1.000   1.000   1.000
+   Q16     3 |      1.000 |     0.045   1.000   1.000
+  Dgen   inf |      1.000 |     1.000   1.000   1.000
+    WZ   inf |      1.000 |     1.000   1.000   1.000
+H2 fires on every non-abelian world, including the class-2 null D8: it cannot place a
+world above class 2. H3 clears D8 at ~alpha and fires on class >= 3;
+the single-bracket version misses Q16 entirely.
+
+2. CALIBRATION ON THE CLASS-2 NULL D8 vs R (sigma=0.3, 4000 trials; SE ~ 0.0035)
+--------------------------------------------------------------------------------
+(direct readout: D8's nested loops ARE identity loops, so D8 and Z are the same null
+ in distribution; D8 is used because H2 fires on it.)
+   R | H2 plugin H2 student | H3 plugin H3 student H3max plug H3max stud | D16 pow Q16 pow
+   1 |     0.057      0.047 |     0.046      0.048      0.053      0.046 |    1.00    1.00
+   2 |     0.116      0.057 |     0.114      0.050      0.073      0.054 |    1.00    1.00
+   3 |     0.086      0.047 |     0.084      0.051      0.066      0.049 |    1.00    1.00
+   5 |     0.070      0.046 |     0.065      0.046      0.059      0.050 |    1.00    1.00
+  10 |     0.060      0.053 |     0.062      0.048      0.051      0.054 |    1.00    1.00
+  20 |     0.052      0.052 |     0.051      0.048      0.054      0.053 |    1.00    1.00
+  50 |     0.052      0.045 |     0.059      0.050      0.050      0.049 |    1.00    1.00
+(H2 columns: the depth-2 detector on an identity commutator loop -- reproduces the H2
+ R=2 wobble under the plug-in, and shows whether the bootstrap-t removes it.)
+
+3. R NEEDED FOR POWER 0.8 AT ALPHA 0.05 vs HOLONOMY ANGLE eps (NN(eps), sigma=0.3)
+----------------------------------------------------------------------------------
+H2 = depth-2 detector on [A,B]; H3 = combined rss depth-3 detector on both nested loops.
+   eps   d2 true d3 rss true |      R80 H2      R80 H3    ratio | R80H2*d2^2 R80H3*d3^2 | FAR@R80H3
+  1.00  6.50e-01    7.74e-01 |        2.27        1.49    0.659 |      0.958      0.895 |     0.050
+  0.50  1.73e-01    1.17e-01 |        18.7          51     2.73 |      0.559      0.702 |     0.054
+  0.30  6.32e-02    2.64e-02 |         142    1.02e+03      7.2 |      0.566      0.711 |     0.043
+  0.20  2.82e-02    7.92e-03 |         691    1.13e+04     16.3 |      0.549      0.708 |     0.047
+  0.10  7.07e-03    9.98e-04 |    1.07e+04    6.45e+05     60.1 |      0.536      0.642 |     0.053
+  0.05  1.77e-03    1.25e-04 |    1.78e+05    4.02e+07      226 |      0.555      0.628 |     0.057
+  0.03  6.36e-04    2.70e-05 |    1.39e+06    9.19e+08      661 |      0.563      0.670 |     0.043
+log-log slope of R80 vs eps (eps <= 0.2): depth-2 -4.01 (theory -4), depth-3 -5.96 (theory -6)
+R80 * signal^2 is ~constant: R80 ~ c * sigma^2 / ||signal||^2, so R80 scales with sigma^2.
+
+4. GL(4) UNIPOTENT TRACK: class-2 Heis null matched at depths 1 AND 2 vs class-3 Uni4
+-------------------------------------------------------------------------------------
+real Gaussian readout noise sigma=0.3 per entry, estimate = shot mean (no Procrustes).
+  eps       R | H2 on Heis H2 on Uni4 | H3 FAR Heis H3 pow Uni4
+ 0.50       2 |      0.103      0.087 |       0.047       0.060
+ 0.50       5 |      0.263      0.287 |       0.051       0.106
+ 0.50      20 |      0.960      0.966 |       0.053       0.441
+ 0.50     100 |      1.000      1.000 |       0.044       1.000
+ 0.20     100 |      0.146      0.158 |       0.060       0.056
+ 0.20    1000 |      0.991      0.992 |       0.059       0.098
+ 0.20    5000 |      1.000      1.000 |       0.046       0.485
+ 0.10    1000 |      0.122      0.109 |       0.054       0.045
+ 0.10   20000 |      0.997      0.996 |       0.047       0.058
+ 0.10  200000 |      1.000      1.000 |       0.051       0.290
+H2 fires equally on both (depth-2 matched by construction); only H3 separates them.
+
+R80 for Uni4(eps) vs Heis null (H3 rss detector):
+   eps    d3 true        R80  R80*d3^2
+  0.50  2.500e-01       39.5     2.471
+  0.30  5.400e-02        772     2.250
+  0.20  1.600e-02   8.58e+03     2.196
+  0.10  2.000e-03   5.51e+05     2.202
+  0.05  2.500e-04   3.59e+07     2.245
+
+5. WHY THE NESTED LOOP MUST BE READ DIRECTLY (sigma=0.3, R=20, 2000 trials)
+---------------------------------------------------------------------------
+assembled = brackets computed from separately estimated A_hat, B_hat (H2's corroborating
+readout); direct = nested loop transported and read as one loop.
+ world true d3 rss | direct med assembled med assembled bias
+      Z    0.00e+00 |  1.276e-01     7.854e-04      +7.85e-04   asm rms err 1.57e-03
+     D8    4.90e-16 |  1.285e-01     3.952e-01      +3.95e-01   asm rms err 4.68e-01
+    D16    4.00e+00 |  3.998e+00     3.986e+00      -1.36e-02   asm rms err 3.51e-02
+    Q16    2.83e+00 |  2.828e+00     2.827e+00      -1.63e-03   asm rms err 1.16e-02
+     WZ    1.11e+00 |  1.119e+00     1.177e+00      +6.54e-02   asm rms err 1.88e-01
+NN(0.5)    1.17e-01 |  1.751e-01     1.203e-01      +2.94e-03   asm rms err 3.34e-02
+NN(0.2)    7.92e-03 |  1.272e-01     9.705e-03      +1.78e-03   asm rms err 7.54e-03
+NN(0.1)    9.98e-04 |  1.273e-01     2.102e-03      +1.10e-03   asm rms err 3.03e-03
+On the class-2 null D8 the assembled bracket is far from I (noise propagated through a
+large [A,B] = -I), while on Z it is ~0: its null law depends on the unknown lower-depth
+structure, so there is no world-free matched null for it. The direct readout's null law is
+the same for every class <= 2 world.
+Near the identity the opposite holds: the assembled bracket's error is suppressed by the
+square of the single-loop holonomy size (plus a noise^3 floor, cf. Z), not ~ sigma_eff, so
+assembling from single-loop estimates is far MORE efficient there (NN rows) -- the eps^-6
+cost in section 3 belongs to the direct nested-loop readout, not to depth 3 as such. But it
+is biased upward by noise-generated brackets and needs a model-based (fitted class-2) null;
+not built here.
+
+6. END-TO-END: Kato transport in Gr(2,4), words as concatenated loops
+---------------------------------------------------------------------
+noiseless transport vs algebraic word holonomy (max ||Hol_transport - Hol_algebra||):
+    D8: 2.5e-16   (nested-loop path length 241 steps)
+   D16: 8.7e-16   (nested-loop path length 241 steps)
+   Q16: 4.5e-15   (nested-loop path length 241 steps)
+    WZ: 1.9e-15   (nested-loop path length 241 steps)
+
+path jitter sigma_path=0.01/step, readout sigma=0.1. Single-loop holonomy jitter: rms ||Hol - Hol_0|| = 0.017
+D8 nested loop under jitter alone: rms ||W3a - I|| = 0.056, ||mean W3a - I|| = 0.0015, Hermitian/anti-Hermitian spread ratio = 0.030
+
+    R | D8 FAR allcomp D8 FAR tangent | D16 pow Q16 pow | Z FAR tangent
+    5 |          0.070          0.035 |    1.00    1.00 |         0.050
+   20 |          0.062          0.050 |    1.00    1.00 |         0.058
+  100 |          0.073          0.033 |    1.00    1.00 |         0.047
+(binomial SE ~0.011 at n=400, ~0.018 at n=150)
+
+7. UNITARY SHORTCUT: depth 2 + unitarity + fiber dimension already exclude class 2
+----------------------------------------------------------------------------------
+If (A,B) in U(n) generate a class-2 non-abelian group, C=[A,B] is central, so on each
+irreducible joint block of dim d it is a scalar c with c^d = 1 (det C = 1 on the block), and
+c != 1 on at least one block. Hence ||C - I||_F >= g(n) = min_{2<=d<=n} 2 sqrt(d) sin(pi/d).
+So 0 < ||[A,B] - I||_F < g(n) certifies class >= 3 from the depth-2 loop alone.
+   n    g(n)
+   2   2.828
+   3   2.828
+   4   2.828
+   6   2.449
+   8   2.165
+  16   1.561
+  32   1.109
+  64   0.785
+ 256   0.393
+U(2) worlds against g(2) = 2.828:
+         Z  ||[A,B]-I|| = 0.000e+00   abelian
+        D8  ||[A,B]-I|| = 2.828e+00   at/above gap: depth 2 cannot decide
+       D16  ||[A,B]-I|| = 2.000e+00   class >= 3 by gap
+       Q16  ||[A,B]-I|| = 2.000e+00   class >= 3 by gap
+      Dgen  ||[A,B]-I|| = 2.380e+00   class >= 3 by gap
+        WZ  ||[A,B]-I|| = 2.770e+00   class >= 3 by gap
+   NN(0.1)  ||[A,B]-I|| = 7.065e-03   class >= 3 by gap
+  NN(0.03)  ||[A,B]-I|| = 6.363e-04   class >= 3 by gap
+Every small-holonomy unitary world is certified class >= 3 by H2's own readout plus the
+gap; H3 adds independent information only for non-unitary (GL) transport,
+for large or unknown fiber dimension (g(n) ~ 2 pi / sqrt(n) -> 0), or when the certificate
+must not lean on the representation theory of U(n).
+
+runtime 755s

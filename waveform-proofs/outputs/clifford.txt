@@ -1,0 +1,10 @@
+Clifford-Koszul verification of Theorem I.1 (operator Pythagoras)
+Random orthogonal projector, random payloads, several (m,k):
+
+  m=2, k=2, rank(pi)=1, dim M_v=16: ||d^2-E||=7.35e-16 ||d_vis^2-E_vis||=5.12e-18 ||d_perp^2-w||=1.26e-15 ||{d_vis,d_perp}||=5.47e-16 |E-(E_vis+w)|=4.44e-16
+  m=3, k=2, rank(pi)=1, dim M_v=64: ||d^2-E||=4.44e-15 ||d_vis^2-E_vis||=1.98e-15 ||d_perp^2-w||=5.28e-15 ||{d_vis,d_perp}||=8.14e-15 |E-(E_vis+w)|=0.00e+00
+  m=2, k=3, rank(pi)=3, dim M_v=64: ||d^2-E||=3.87e-15 ||d_vis^2-E_vis||=4.68e-15 ||d_perp^2-w||=0.00e+00 ||{d_vis,d_perp}||=8.38e-15 |E-(E_vis+w)|=8.88e-16
+  m=3, k=3, rank(pi)=2, dim M_v=512: ||d^2-E||=2.58e-14 ||d_vis^2-E_vis||=1.12e-14 ||d_perp^2-w||=1.05e-14 ||{d_vis,d_perp}||=3.94e-14 |E-(E_vis+w)|=1.78e-15
+
+All residuals ~1e-14 => (d_perp)^2 = w*id exactly:
+(M_v, d_perp) is a matrix factorization of the superpotential w. [THM]

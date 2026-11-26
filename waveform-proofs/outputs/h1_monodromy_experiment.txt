@@ -1,0 +1,18 @@
+N=96, h_floor=0.75, scrambles=200, alpha=0.05
+
+SNAPSHOT (snr=5, h_true=3.0)
+ world   tension    z_iso |   h_hat     dRSS    pval  monodromy?
+     H     37.13     10.6 |   2.985    59.02   0.005        True
+     I     90.42      0.3 |   9.582     1.53   0.687       False
+     S      4.28     18.1 |  -0.754    -4.05   1.000       False
+     Z     85.36     -0.8 |  17.876     1.52   0.607       False
+
+POWER/CALIBRATION SWEEP (T=120 trials/world/snr, h_true=3.0)
+  snr |   H det    I FA    S FA    Z FA | med h_hat|H
+  0.5 |    1.00    0.08    0.01    0.02 |       3.000
+  1.0 |    1.00    0.07    0.00    0.06 |       3.016
+  2.0 |    1.00    0.05    0.00    0.03 |       3.016
+  5.0 |    1.00    0.08    0.00    0.05 |       2.985
+ 10.0 |    1.00    0.06    0.00    0.05 |       3.016
+
+GO iff H-det -> 1 with SNR; I/S/Z false-alarm ~0.05; recovered h_hat -> 3.000

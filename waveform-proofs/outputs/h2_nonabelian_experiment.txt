@@ -1,0 +1,22 @@
+H2 (non-abelian) detector, angles a=b=pi/2; null M=300, alpha=0.05
+
+SNAPSHOT (per-shot sigma=0.3, R=20 shots)
+ world ||Hol_A-I|| ||[A,B]||_hat delta=||HolC-I||    pval  non-abelian?
+    NA       1.082         1.420            1.384   0.003          True
+    AB       1.082         0.071            0.115   0.123         False
+     Z       0.000         0.010            0.119   0.183         False
+
+Note: ||Hol_A - I|| identical for NA and AB by construction (matched spectra) --
+the single-loop magnitude signature CANNOT separate them. Only non-commutativity does.
+
+POWER/CALIBRATION SWEEP over shot count R (per-shot sigma=0.3, T=150 trials)
+   R | NA detect AB falsealarm  Z falsealarm | NA med ||[A,B]|| AB med ||[A,B]||
+   1 |      0.99          0.03          0.05 |            1.385            0.517
+   2 |      1.00          0.12          0.15 |            1.407            0.335
+   5 |      1.00          0.05          0.08 |            1.410            0.241
+  10 |      1.00          0.05          0.08 |            1.410            0.163
+  20 |      1.00          0.05          0.05 |            1.415            0.112
+  50 |      1.00          0.03          0.06 |            1.409            0.064
+
+true ||[Hol_A,Hol_B]|| for NA at a=b=pi/2: 1.414
+GO iff: NA detect -> 1 as R rises; AB & Z falsealarm ~0.05; NA ||[A,B]|| concentrates on truth, AB ~ 0.

@@ -1,0 +1,20 @@
+Exact iterated-commutator observables (unipotent holonomy in GL(V)):
+
+H1 witness: abelian (class 1)         depth2 |[A,B]-I|=  0   depth3 |[[A,B],A]-I|=  0   depth4=  0
+H2 witness: Heisenberg (class 2)      depth2 |[A,B]-I|=  1   depth3 |[[A,B],A]-I|=  0   depth4=  0
+H3 witness: unitriangular (class 3)   depth2 |[A,B]-I|=  3   depth3 |[[A,B],A]-I|=  2   depth4=  0
+
+Filtration read-off:
+  depth-2 separates H1 from H2 : abelian=0 (=0), class2=1 (>0)  -> True
+  depth-3 separates H2 from H3 : class2=0 (=0), class3=2 (>0)  -> True
+  depth-4 vanishes at class 3  : class3 depth4=0 (=0)                 -> True
+
+Homomorphism check: an ABELIAN group has vanishing depth-2 in ANY dimension.
+  dim= 2:  ||[UA,UB]-I|| = 3.23e-16  (abelian => depth-2 observable = 0, regardless of dimension)
+  dim= 5:  ||[UA,UB]-I|| = 1.29e-15  (abelian => depth-2 observable = 0, regardless of dimension)
+  dim=12:  ||[UA,UB]-I|| = 2.72e-15  (abelian => depth-2 observable = 0, regardless of dimension)
+  dim=40:  ||[UA,UB]-I|| = 1.28e-14  (abelian => depth-2 observable = 0, regardless of dimension)
+
+=> No abelian holonomy reproduces the depth-2 (ordering) observable in the
+   full-frame readout, in ANY representation dimension. The comparator escape
+   'use a bigger abelian model' is closed by rho preserving commutators.

@@ -1,0 +1,13 @@
+Wilczek-Zee non-abelian holonomy, Gr(2,4)
+
+Hol_A (unitarity err 1.7e-14):
+[[ 0.1433+0.j -0.9897+0.j]
+ [ 0.9897+0.j  0.1433+0.j]]
+Hol_B (unitarity err 9.7e-15):
+[[0.1433+0.j     0.    -0.9897j]
+ [0.    -0.9897j 0.1433+0.j    ]]
+
+||[Hol_A, Hol_B]|| = 2.770314  => non-abelian: True
+Hol_A eigenphases/2pi = [ 0.227108 -0.227108] (irrational => infinite order)
+
+CONTROL (disjoint planes): ||[Hol_A,Hol_B]|| = 0.00e+00 (abelian, as expected)

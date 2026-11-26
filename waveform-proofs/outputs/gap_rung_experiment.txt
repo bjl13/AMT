@@ -1,0 +1,178 @@
+
+0. CLASS-2 COMMUTATOR SPECTRA IN U(n) AND THE GAP g(n)
+------------------------------------------------------
+Prop. 1: a class-2 commutator is I (+) sum_j c_j I_{m_j}, c_j a primitive m_j-th root of 1.
+  n #spectra    g(n)  spectra with d <= g(n) + 0.6 (block m:root, d)
+  2        1   2.828  2:e^(2pi i 1/2) 2.828
+  3        2   2.828  2:e^(2pi i 1/2)+I1 2.828; 3:e^(2pi i 1/3) 3.000
+  4        4   2.828  4:e^(2pi i 1/4) 2.828; 2:e^(2pi i 1/2)+I2 2.828; 3:e^(2pi i 1/3)+I1 3.000
+  5        7   2.629  5:e^(2pi i 1/5) 2.629; 4:e^(2pi i 1/4)+I1 2.828; 2:e^(2pi i 1/2)+I3 2.828; 3:e^(2pi i 1/3)+I2 3.000
+  6       12   2.449  6:e^(2pi i 1/6) 2.449; 5:e^(2pi i 1/5)+I1 2.629; 4:e^(2pi i 1/4)+I2 2.828; 2:e^(2pi i 1/2)+I4 2.828; 3:e^(2pi i 1/3)+I3 3.000
+  7       20   2.296  7:e^(2pi i 1/7) 2.296; 6:e^(2pi i 1/6)+I1 2.449; 5:e^(2pi i 1/5)+I2 2.629; 4:e^(2pi i 1/4)+I3 2.828; 2:e^(2pi i 1/2)+I5 2.828
+  8       33   2.165  8:e^(2pi i 1/8) 2.165; 7:e^(2pi i 1/7)+I1 2.296; 6:e^(2pi i 1/6)+I2 2.449; 5:e^(2pi i 1/5)+I3 2.629
+
+Tightness and the block-dimension claim, on explicit class-2 pairs (random basis):
+        D8 n=2: ||[A,B]-I|| = 2.8284, g(n) = 2.8284, class-2 residual 6.7e-16, eig angles/2pi [0.5 0.5]
+       CS3 n=3: ||[A,B]-I|| = 3.0000, g(n) = 2.8284, class-2 residual 8.8e-16, eig angles/2pi [-0.3333 -0.3333 -0.3333]
+       CS4 n=4: ||[A,B]-I|| = 2.8284, g(n) = 2.8284, class-2 residual 5.6e-16, eig angles/2pi [-0.25 -0.25 -0.25 -0.25]
+       CS5 n=5: ||[A,B]-I|| = 2.6287, g(n) = 2.6287, class-2 residual 1.5e-15, eig angles/2pi [-0.2 -0.2 -0.2 -0.2 -0.2]
+       CS8 n=8: ||[A,B]-I|| = 2.1648, g(n) = 2.1648, class-2 residual 9.3e-16, eig angles/2pi [-0.125 -0.125 -0.125 -0.125 -0.125 -0.125 -0.125 -0.125]
+   CS2+CS3 n=5: ||[A,B]-I|| = 4.1231, g(n) = 2.6287, class-2 residual 9.7e-16, eig angles/2pi [-0.5    -0.3333 -0.3333 -0.3333  0.5   ]
+The CS_m pair attains 2 sqrt(m) sin(pi/m), so g(n) is the exact infimum over class-2 pairs.
+
+1. CALIBRATION ON CLASS <= 2 WORLDS (injected, sigma=0.3, alpha=0.05)
+---------------------------------------------------------------------
+gap = certify class >= 3 (p_a < a and p_b < a): must be <= alpha on every row.
+p_a-only and p_b-only shown to see which half of the intersection-union test carries it.
+  world       class  n  ||C-I||    R trials |    gap  p_a<a  p_b<a | med d_hat
+      Z     abelian  2    0.000    1   4000 |  0.050  1.000  0.050 |     0.384  binding spectrum counts [np.int64(4000)]
+      Z     abelian  2    0.000    2   4000 |  0.053  1.000  0.053 |     0.276  binding spectrum counts [np.int64(4000)]
+      Z     abelian  2    0.000    5   4000 |  0.048  1.000  0.048 |     0.172  binding spectrum counts [np.int64(4000)]
+      Z     abelian  2    0.000   20   4000 |  0.050  1.000  0.050 |     0.087  binding spectrum counts [np.int64(4000)]
+      Z     abelian  2    0.000  100   4000 |  0.042  1.000  0.042 |     0.039  binding spectrum counts [np.int64(4000)]
+     AB     abelian  2    0.000    1   4000 |  0.048  1.000  0.048 |     0.386  binding spectrum counts [np.int64(4000)]
+     AB     abelian  2    0.000    2   4000 |  0.050  1.000  0.050 |     0.271  binding spectrum counts [np.int64(4000)]
+     AB     abelian  2    0.000    5   4000 |  0.048  1.000  0.048 |     0.172  binding spectrum counts [np.int64(4000)]
+     AB     abelian  2    0.000   20   4000 |  0.051  1.000  0.051 |     0.087  binding spectrum counts [np.int64(4000)]
+     AB     abelian  2    0.000  100   4000 |  0.051  1.000  0.051 |     0.039  binding spectrum counts [np.int64(4000)]
+     D8  2, on g(2)  2    2.828    1   4000 |  0.052  0.052  1.000 |     2.801  binding spectrum counts [np.int64(4000)]
+     D8  2, on g(2)  2    2.828    2   4000 |  0.052  0.052  1.000 |     2.816  binding spectrum counts [np.int64(4000)]
+     D8  2, on g(2)  2    2.828    5   4000 |  0.053  0.053  1.000 |     2.823  binding spectrum counts [np.int64(4000)]
+     D8  2, on g(2)  2    2.828   20   4000 |  0.050  0.050  1.000 |     2.827  binding spectrum counts [np.int64(4000)]
+     D8  2, on g(2)  2    2.828  100   4000 |  0.054  0.054  1.000 |     2.828  binding spectrum counts [np.int64(4000)]
+  D8+I2  2, on g(4)  4    2.828    1   2000 |  0.000  0.000  1.000 |     2.829  binding spectrum counts [np.int64(990), np.int64(1010)]
+  D8+I2  2, on g(4)  4    2.828    2   2000 |  0.000  0.000  1.000 |     2.828  binding spectrum counts [np.int64(1002), np.int64(998)]
+  D8+I2  2, on g(4)  4    2.828    5   2000 |  0.000  0.000  1.000 |     2.829  binding spectrum counts [np.int64(993), np.int64(1007)]
+  D8+I2  2, on g(4)  4    2.828   20   2000 |  0.000  0.000  1.000 |     2.828  binding spectrum counts [np.int64(952), np.int64(1048)]
+  D8+I2  2, on g(4)  4    2.828  100   2000 |  0.000  0.000  1.000 |     2.828  binding spectrum counts [np.int64(959), np.int64(1041)]
+    CS4  2, on g(4)  4    2.828    1   2000 |  0.051  0.051  1.000 |     2.829  binding spectrum counts [np.int64(1007), np.int64(993)]
+    CS4  2, on g(4)  4    2.828    2   2000 |  0.046  0.046  1.000 |     2.827  binding spectrum counts [np.int64(1009), np.int64(991)]
+    CS4  2, on g(4)  4    2.828    5   2000 |  0.057  0.057  1.000 |     2.832  binding spectrum counts [np.int64(977), np.int64(1023)]
+    CS4  2, on g(4)  4    2.828   20   2000 |  0.050  0.050  1.000 |     2.829  binding spectrum counts [np.int64(975), np.int64(1025)]
+    CS4  2, on g(4)  4    2.828  100   2000 |  0.046  0.046  1.000 |     2.829  binding spectrum counts [np.int64(990), np.int64(1010)]
+    CS5  2, on g(5)  5    2.629    1   2000 |  0.061  0.061  1.000 |     2.689  binding spectrum counts [np.int64(1871), np.int64(0), np.int64(127)]
+    CS5  2, on g(5)  5    2.629    2   2000 |  0.051  0.051  1.000 |     2.657  binding spectrum counts [np.int64(1968), np.int64(1), np.int64(31)]
+    CS5  2, on g(5)  5    2.629    5   2000 |  0.043  0.043  1.000 |     2.642  binding spectrum counts [np.int64(1998), np.int64(0), np.int64(2)]
+    CS5  2, on g(5)  5    2.629   20   2000 |  0.043  0.043  1.000 |     2.631  binding spectrum counts [np.int64(2000)]
+    CS5  2, on g(5)  5    2.629  100   2000 |  0.049  0.049  1.000 |     2.629  binding spectrum counts [np.int64(2000)]
+    CS8  2, on g(8)  8    2.165    1   1000 |  0.051  0.052  0.999 |     2.592  binding spectrum counts [np.int64(818), np.int64(2)]
+    CS8  2, on g(8)  8    2.165    2   1000 |  0.063  0.063  1.000 |     2.377  binding spectrum counts [np.int64(991), np.int64(2)]
+    CS8  2, on g(8)  8    2.165    5   1000 |  0.060  0.060  1.000 |     2.250  binding spectrum counts [np.int64(1000)]
+    CS8  2, on g(8)  8    2.165   20   1000 |  0.051  0.051  1.000 |     2.190  binding spectrum counts [np.int64(1000)]
+    CS8  2, on g(8)  8    2.165  100   1000 |  0.057  0.057  1.000 |     2.169  binding spectrum counts [np.int64(1000)]
+binding spectrum counts: how often each class-2 spectrum (in section-0 order, d <= g+WIN) gave the max p_a
+(binomial SE: 0.0035 at 4000 trials, 0.005 at 2000, 0.007 at 1000)
+On D8 (C = -I, the farthest point of U(2) from I) noise can only pull d_hat DOWN, so a naive
+'d_hat < g' rule would false-alarm; the exact-spectrum null absorbs that bias.
+  D8 R=  1: P(d_hat < g(2)) = 1.000, mean shortfall g - d_hat = 3.27e-02
+  D8 R=  5: P(d_hat < g(2)) = 1.000, mean shortfall g - d_hat = 6.40e-03
+  D8 R= 20: P(d_hat < g(2)) = 1.000, mean shortfall g - d_hat = 1.60e-03
+
+2. POWER NEAR THE GAP (U(2), class >= 3 worlds with ||C-I|| just below g(2) = 2.828)
+------------------------------------------------------------------------------------
+   world  ||C-I||  margin | R=1    R=2    R=5    R=10   R=20   R=50   R=100  R=300 
+ Dih2.80    2.800   0.028 |   0.26   0.22   0.83   1.00   1.00   1.00   1.00   1.00
+      WZ    2.770   0.058 |   0.47   0.40   1.00   1.00   1.00   1.00   1.00   1.00
+ Dih2.75    2.750   0.078 |   0.66   0.50   1.00   1.00   1.00   1.00   1.00   1.00
+ Dih2.70    2.700   0.128 |   0.87   0.72   1.00   1.00   1.00   1.00   1.00   1.00
+ Dih2.60    2.600   0.228 |   0.99   0.92   1.00   1.00   1.00   1.00   1.00   1.00
+    Dgen    2.380   0.448 |   1.00   1.00   1.00   1.00   1.00   1.00   1.00   1.00
+ Dih2.40    2.400   0.428 |   1.00   0.99   1.00   1.00   1.00   1.00   1.00   1.00
+     D16    2.000   0.828 |   1.00   1.00   1.00   1.00   1.00   1.00   1.00   1.00
+     Q16    2.000   0.828 |   1.00   1.00   1.00   1.00   1.00   1.00   1.00   1.00
+H2 (p_b alone) fires at 1.00 on every row for R >= 1; the gap rung's cost near g is the p_a half.
+
+R80 vs margin (gap-rung power 0.8):
+   world  margin      R80 R80*margin^2
+ Dih2.80   0.028     4.64        0.004
+      WZ   0.058     2.98        0.010
+ Dih2.75   0.078     2.74        0.017
+ Dih2.70   0.128        1        0.016
+ Dih2.60   0.228        1        0.052
+    Dgen   0.448        1        0.201
+ Dih2.40   0.428        1        0.184
+
+3. SMALL HOLONOMY NN(eps) = R(x,eps), R(y,eps): R80 of gap rung vs H2 and H3 (sigma=0.3)
+----------------------------------------------------------------------------------------
+  eps   ||C-I|| |    R80 H2   R80 gap    R80 H3 |  H3/gap | R80gap*d2^2 | FAR gap on D8 at R80gap
+ 1.00 6.501e-01 |      2.74      2.73       1.8 |    0.66 |       1.154 |                   0.052
+ 0.50 1.731e-01 |      20.2      19.4      50.3 |    2.59 |       0.582 |                   0.051
+ 0.30 6.316e-02 |       148       140  1.04e+03 |    7.43 |       0.560 |                   0.043
+ 0.20 2.819e-02 |       651       751  1.13e+04 |    15.1 |       0.597 |                   0.045
+ 0.10 7.065e-03 |  1.11e+04  1.14e+04  6.26e+05 |    54.7 |       0.571 |                   0.048
+ 0.05 1.767e-03 |  1.76e+05  1.87e+05       inf |     inf |       0.585 |                   0.046
+log-log slope of R80 (eps <= 0.2): H2 -4.04, gap -3.98
+(H3 at eps = 0.05 not rerun: h3-nested-rung.md gives 4.0e7.)
+
+4. SCOPE: misspecified fiber dimension, projected readout, non-unitary transport
+--------------------------------------------------------------------------------
+(a) n UNDERSTATED in the null set: class-2 CS5 in U(5) (||C-I|| = 2.629), tested against
+    the class-2 spectra of a smaller assumed fiber (padded with 1s):
+    assumed n=2 (g=2.828) R=  5: false certification rate 0.995
+    assumed n=2 (g=2.828) R= 20: false certification rate 1.000
+    assumed n=2 (g=2.828) R=100: false certification rate 1.000
+    assumed n=3 (g=2.828) R=  5: false certification rate 0.990
+    assumed n=3 (g=2.828) R= 20: false certification rate 1.000
+    assumed n=3 (g=2.828) R=100: false certification rate 1.000
+    assumed n=4 (g=2.828) R=  5: false certification rate 0.855
+    assumed n=4 (g=2.828) R= 20: false certification rate 1.000
+    assumed n=4 (g=2.828) R=100: false certification rate 1.000
+    assumed n=5 (g=2.629) R=  5: false certification rate 0.047
+    assumed n=5 (g=2.629) R= 20: false certification rate 0.056
+    assumed n=5 (g=2.629) R=100: false certification rate 0.038
+
+(b) PROJECTED READOUT: class-2 pair in U(4), only a 2-frame read (top-left 2x2 of the
+    commutator-loop action), tested as if n = 2. The compressed block need not be unitary;
+    Procrustes forces it, and the result can sit anywhere in U(2):
+       CS4: ||Procrustes(block)-I|| = 2.000, R=  5: false certification 1.000
+       CS4: ||Procrustes(block)-I|| = 2.000, R= 20: false certification 1.000
+       CS4: ||Procrustes(block)-I|| = 2.000, R=100: false certification 1.000
+     D8+I2: ||Procrustes(block)-I|| = 2.000, R=  5: false certification 1.000
+     D8+I2: ||Procrustes(block)-I|| = 2.000, R= 20: false certification 1.000
+     D8+I2: ||Procrustes(block)-I|| = 2.000, R=100: false certification 1.000
+    Under projected readout the gap rung is not valid. (H2 itself is unaffected for the
+    direct commutator loop of an ABELIAN world, whose block is exactly I.)
+
+(c) n OVERSTATED: the same U(2) worlds, fiber really U(8) with 6 trivial dimensions
+    (holonomy W (+) I6, full 8x8 readout, null set of U(8), g(8) = 2.165):
+       D8 ||C-I||=2.828 R= 20: certify rate in U(8) 0.000   (in U(2): 0.066)
+       D8 ||C-I||=2.828 R=100: certify rate in U(8) 0.000   (in U(2): 0.042)
+       WZ ||C-I||=2.770 R= 20: certify rate in U(8) 0.000   (in U(2): 1.000)
+       WZ ||C-I||=2.770 R=100: certify rate in U(8) 0.000   (in U(2): 1.000)
+     Dgen ||C-I||=2.380 R= 20: certify rate in U(8) 0.000   (in U(2): 1.000)
+     Dgen ||C-I||=2.380 R=100: certify rate in U(8) 0.000   (in U(2): 1.000)
+      D16 ||C-I||=2.000 R= 20: certify rate in U(8) 1.000   (in U(2): 1.000)
+      D16 ||C-I||=2.000 R=100: certify rate in U(8) 1.000   (in U(2): 1.000)
+    Overstating n is conservative: size stays <= alpha, power is lost for g(n') <= ||C-I|| < g(n).
+
+(d) NON-UNITARY transport: GL(4) class-2 Heisenberg pair Heis(eps) near I (h3 GL track),
+    read with the unitary pipeline as if it were Kato transport (n = 4):
+    eps=0.5: ||C-I|| = 0.354, R=   20: H2 fires 0.921, gap rung 'certifies class>=3' 0.921
+    eps=0.5: ||C-I|| = 0.354, R=  200: H2 fires 1.000, gap rung 'certifies class>=3' 1.000
+    eps=0.5: ||C-I|| = 0.354, R= 2000: H2 fires 1.000, gap rung 'certifies class>=3' 1.000
+    eps=0.3: ||C-I|| = 0.127, R=   20: H2 fires 0.167, gap rung 'certifies class>=3' 0.167
+    eps=0.3: ||C-I|| = 0.127, R=  200: H2 fires 0.985, gap rung 'certifies class>=3' 0.985
+    eps=0.3: ||C-I|| = 0.127, R= 2000: H2 fires 1.000, gap rung 'certifies class>=3' 1.000
+    Class-2 commutators are not quantized off U(n): the gap rung is unitary-only.
+
+5. END-TO-END: Kato transport in Gr(2,4), commutator loop, path jitter 0.01/step, readout 0.1
+---------------------------------------------------------------------------------------------
+   world  ||C-I||    R trials |    gap  p_a<a  p_b<a
+  (noiseless transport error on D8 commutator: 1.5e-16)
+      AB    0.000    5   1000 |  0.059  1.000  0.059
+      AB    0.000   20   1000 |  0.047  1.000  0.047
+      AB    0.000  100    500 |  0.040  1.000  0.040
+      D8    2.828    5   1000 |  0.054  0.054  1.000
+      D8    2.828   20   1000 |  0.056  0.056  1.000
+      D8    2.828  100    500 |  0.060  0.060  1.000
+ Dih2.70    2.700    5    300 |  1.000  1.000  1.000
+ Dih2.70    2.700   20    300 |  1.000  1.000  1.000
+ Dih2.70    2.700  100    150 |  1.000  1.000  1.000
+ Dih2.40    2.400    5    300 |  1.000  1.000  1.000
+ Dih2.40    2.400   20    300 |  1.000  1.000  1.000
+ Dih2.40    2.400  100    150 |  1.000  1.000  1.000
+      WZ    2.770    5    300 |  1.000  1.000  1.000
+      WZ    2.770   20    300 |  1.000  1.000  1.000
+      WZ    2.770  100    150 |  1.000  1.000  1.000
+
+runtime 1695s

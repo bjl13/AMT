@@ -1,0 +1,17 @@
+=== WORKED EXAMPLE (source doc), recomputed ===
+ambient energy E = sum ||Xi||^2 = 3.240000
+
+O_xy: Psi=[1.5 0.3]
+  gross=2.325342 net=1.529706 coherence=-0.326075 tension=0.795637 D_O=0.376543
+  pairwise cosines [((0, 1), np.float64(0.9962)), ((0, 2), np.float64(-0.9806)), ((1, 2), np.float64(-0.9939))]
+O_xz: Psi=[1.5 1.2]
+  gross=3.075458 net=1.920937 coherence=+0.135587 tension=1.154520 D_O=0.015432
+  pairwise cosines [((0, 1), np.float64(0.995)), ((0, 2), np.float64(-0.2465)), ((1, 2), np.float64(-0.3417))]
+
+Monotonicity: net{R1,R2}=1.923538 -> +R3 -> 1.529706 (DECREASE: True) => no additive model reproduces this
+
+=== SYNTHETIC ENSEMBLE  N=500 m=3 d=3 seed=0 ===
+  node-coherence sign flips : 149/500 = 29.8%
+  pairwise sign flips       : 497/1500 = 33.1%
+  tension>0 both frames     : 500/500 = 100.0%
+  monotonicity violations   : 242/500 = 48.4%
